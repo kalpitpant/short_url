@@ -21,10 +21,15 @@ def getURL(request):
 
     original_url = request.POST['url_to_short']
     short_url = getHashValue(original_url)
+    
+    
+    instance = ShortURL(original_website = original_url , shortcut_url = short_url)
+    instance.save()
 
-    domain_name = 'www.shorturl.com'
-
+    
+    domain_name = 'http://127.0.0.1:8000'
     new_url = f'{domain_name}/{short_url}'
+    
     context = {}
     context['original_url'] = original_url
     context['short_url'] = new_url
@@ -38,4 +43,4 @@ def getHashValue(original_url):
 
 def convertURL(request):
     short_url = request.session['short_url']
-    return HttpResponse(f"Your tiny url will be www.shorturl.com/{short_url}")
+    return HttpResponse(f"Your tiny url will be http://127.0.0.1:8000/{short_url}")
