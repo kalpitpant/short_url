@@ -25,7 +25,7 @@ SECRET_KEY = '06ii%l2q6r*l&0yvv^i-9^2!yuolw(y@rfgc+kww!ytvm9p*0#'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['kalpitpant.pythonanywhere.com']
+ALLOWED_HOSTS = ['kalpitpant.pythonanywhere.com' , '127.0.0.1'  , 'localhost']
 
 
 # Application definition

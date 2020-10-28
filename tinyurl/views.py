@@ -9,6 +9,8 @@ from django.shortcuts import render
 from .form import InputForm
 from django.urls import reverse
 from .hash import fnv1a_32
+import socket
+
 
 def index(request):
     context = {}
@@ -27,7 +29,7 @@ def getURL(request):
     instance.save()
 
     
-    domain_name = 'http://127.0.0.1:8000'
+    domain_name = request.META['HTTP_HOST']
     new_url = f'{domain_name}/{short_url}'
     
     context = {}
